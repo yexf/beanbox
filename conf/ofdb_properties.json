@@ -1,0 +1,56 @@
+{
+    "db_read_only":false,
+    "db_path":"/home/service/var/data",
+    "disable_wal":false,
+    "db_slot_num":32,
+    "db_num":32,
+    "small_compaction_threshold":1000,    
+    "write_nodes":{
+        "192.168.10.1:9919":[0, 5460],
+        "192.168.10.2:9919":[5461, 10921],
+        "192.168.10.3:9919":[10922, 16383]
+    },
+    "read_nodes":{
+        "192.168.10.1:9919":[0, 5460],
+        "192.168.10.2:9919":[5461, 10921],
+        "192.168.10.3:9919":[10922, 16383]
+    },
+    "db":{
+        "table":{
+            "default_hash_table":{
+                "columns":["a","b","c","d","e","f","g","aai","ac2","act","a_ctr11","a_ctr12","a_ctr13",
+	                "a_ctr21","a_ctr22","a_ctr23","ad2","ad3","ad4","ad5","ads_rfm30",
+	                "ads_rfm7","ae","af","ai","as","avf","bk","bs","bswn","bwc","c2nd",
+	                "c3nd","ci","ckg1","ckg2","cnd","csac2","csai"],
+	            "update_timestamp":false,
+	            "//max_column":"最大列数量，默认为65535，配置比65535小的值没有意义，最大可配置为2147483648",
+	            "max_column":65535,
+	            "//row_ttl":"-1 means no ttl",
+	            "row_ttl":604800
+            }
+        }
+    },
+    "db_properties":{
+        "//table_format":"BlockBasedTable(default) or PlainTable",
+        "table_format":"BlockBasedTable",
+        "options":{
+        	"write_buffer_size":67108864,
+        	"max_write_buffer_size":536870912,
+        	"max_write_buffer_number":2,
+        	"target_file_size_base":1048576,
+        	"max_background_flushes":1,
+        	"max_background_compactions":2,
+        	"max_open_files":10000,
+        	"max_bytes_for_level_multiplier":5,
+        	"optimize_filters_for_hits":true,
+        	"level_compaction_dynamic_level_bytes":true,
+        	"compression":"none"
+        },
+        "table_options":{
+        	"block_size":4096,
+        	"cache_index_and_filter_blocks":false
+        },
+        "block_cache_size":8388608,
+        "share_block_cache":false
+    }
+}

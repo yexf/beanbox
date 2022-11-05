@@ -1,0 +1,17 @@
+[oppo-epel]
+name=OPPO CentOS EPEL $releasever - $basearch 
+baseurl=http://mirrors.oppo.local/epel/$releasever/$basearch
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.oppo.local/epel/RPM-GPG-KEY-EPEL-$releasever
+
+[oppo-epel-debuginfo]
+name=OPPO CentOS EPEL $releasever - $basearch - Debug
+baseurl=http://mirrors.oppo.local/epel/$releasever/$basearch/debug
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.oppo.local/epel/RPM-GPG-KEY-EPEL-$releasever
+
+

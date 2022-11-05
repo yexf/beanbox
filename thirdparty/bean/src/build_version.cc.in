@@ -1,0 +1,4 @@
+#include "bean/include/build_version.h"
+const char* bean_build_git_sha = "bean_build_git_sha:@@GIT_SHA@@";
+const char* bean_build_git_date = "bean_build_git_date:@@GIT_DATE_TIME@@";
+const char* bean_build_compile_date = __DATE__;

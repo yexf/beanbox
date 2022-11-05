@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  ofdb-dev:
+    #build:
+    #  context: ./
+    #  dockerfile: ./Dockerfile
+    image: devhub.baymax.oppoer.me/80349971/ofdb-compile:v1.7.6
+    security_opt:
+    - seccomp:unconfined
+    container_name: ofdb-dev
+    ports:
+    - "7622:22"
+    - "7699:6699"
+    volumes:
+    - ../../work:/work
+    working_dir: /work
+    hostname: centos76
+    privileged: true
+    command: "/usr/sbin/init"
